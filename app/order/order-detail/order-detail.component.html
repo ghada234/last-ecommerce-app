@@ -1,0 +1,19 @@
+<div class="container mt-4 mb-4" >
+    <div class="row" >
+        <div class="col-md-8">
+            <app-basket-summary [items]="order?.orderItems"></app-basket-summary>
+        </div>
+
+        <div class="col-md-4">
+            <app-order-totals
+             [shippingPrice]="order?.shippingPrice"
+             [subTotal]="order?.subTotal"
+             [total]="order?.subTotal+ order?.shippingPrice"
+             [isOrder]="true"
+            
+            ></app-order-totals>
+
+
+        </div>
+    </div>
+</div>

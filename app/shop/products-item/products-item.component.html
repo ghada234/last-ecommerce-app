@@ -1,0 +1,47 @@
+<!-- h-100 class is height: 100%-->
+<div class="card mb-5 shadow-sm h-100 hide-on-init animated-delay-1" style="margin-bottom: 20px;" animateOnScroll animationName="animated fadeInUp">
+
+    <div class="img-container">
+        <span class="badge rounded-pill bg-danger text-light  p-2" *ngIf="product?.discountEnabled"> {{product?.amoutWithPercentage
+        }} % خصم</span>
+
+        <img src="{{product?.pictureUrl}}" style="height: 360px;" class="img-thumbnail" alt="product.name" class="image">
+
+        <div class="overlay">
+            <div class="btn-group buttons">
+                
+                <!-- <button type="button" class="btn  btn-primary w-40" routerLink="/shop/product/{{product?.id}}">نفاصيل المنتج</button> -->
+                <!-- <button type="button" class="btn  btn-primary w-40" routerLink="/shop/category/{{product?.categoryParentId}}/categoryshop/{{product?.categoryId}}/product/{{product?.id}}">نفاصيل المنتج</button> -->
+
+
+
+                <button type="button" class="btn  btn-primary" routerLink="/shop/category/{{product?.categoryParenitId}}/categoryshop/{{product?.categoryId}}/product/{{product?.id}}"><i class="pi pi-eye" style="font-size: 1rem"></i></button>
+                <button type="button" class="btn btn-primary" (click)="AddItemToWishList(product)"><i class="pi pi-heart" style="font-size: 1rem"></i></button>
+k
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="card-body d-flex flex-column h-100 jusify-between" *ngIf="product">
+        <a style="cursor: pointer;text-decoration: none;" routerLink="/shop/product/{{product?.id}}">
+            <h5 class="upper-case" style="color: #555">{{product?.name}}</h5>
+        </a>
+
+        <p class="mb-2" *ngIf="!product?.discountEnabled" style="font-weight: bold;font-size: 1.2rem;">{{product?.price}}Egp</p>
+        
+     
+        <div *ngIf="product?.discountEnabled" style="font-weight: bold;">
+            <p  style="font-size: 1rem; color: #bbb;  text-decoration: line-through;">
+                {{product?.price}}EGP
+            </p>
+            <span style="font-size: 1.2rem; color: #BB2649; ">{{product?.priceAfterDiscount}}EGP</span>
+        </div>
+
+
+
+
+
+    </div>
+</div>

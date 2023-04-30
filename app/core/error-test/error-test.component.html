@@ -1,0 +1,18 @@
+<div class="container mt-4">
+
+    <button (click)="get500ServerError()" class="btn btn-secondary mr-2"> Test 500 error</button>
+    <button (click)=" get404NotFound()"  class="btn btn-secondary mr-2"> Test 404 error</button>
+    <button (click)="get400Error()"  class="btn btn-secondary mr-2"> Test 400 error</button>
+    <button (click)="get400ErrorValidation()"  class="btn btn-secondary mr-2"> Test 400 error validation</button>
+</div>
+
+<div>
+
+    <ul *ngIf="Validationerror">
+
+        <li *ngFor="let error of Validationerror" class="text-danger" style="list-style: none;">
+            {{error}}
+        </li>
+    </ul>
+</div>
+

@@ -1,0 +1,387 @@
+<!-- Carousel wrapper -->
+
+
+<!-- <div id="carouselExampleControlsNoTouching"  class="carousel slide carousel-fade" data-bs-ride="carousel" style="position: relative;">
+    <div class=" d-flex  justify-content-center align-items-center">
+      <div class="slide-write" style="color:#fff"> 
+        <h1>تسوق الان بأفضل الأسعار </h1>
+      </div> 
+    </div> 
+
+    <div class="carousel-inner">
+      <div class="carousel-item active" style=" background: url(assets/images/4.jpg) no-repeat center center;background-size:cover ; background-attachment: fixed;" data-bs-interval="6000">
+        <div class="carousel-caption d-none d-md-block">
+        
+
+
+        </div>
+      
+      </div>
+
+     <img src="assets/images/6.jpg" class="d-block w-100" alt="slide1"> 
+      
+      <div class="carousel-item " style=" background: url(assets/images/6.png) no-repeat center center;background-size:cover ; background-attachment: fixed; " data-bs-interval="3000">
+       <img src="assets/images/5.jpg" class="d-block w-100" alt="slide2">
+        <div class="carousel-caption d-none d-md-block">
+          <h1>افضل<br>العروض <span >على الموبايلات</span></h1>
+      </div> 
+
+      <div class="carousel-item " style=" background: url(assets/images/6.jpg) no-repeat center center;background-size:cover ; background-attachment: fixed; " data-bs-interval="3000">
+     <img src="assets/images/5.jpg" class="d-block w-100" alt="slide2"> -->
+<!-- <div class="carousel-caption d-none d-md-block">
+          <h1>افضل<br>العروض <span >على الموبايلات</span></h1>
+      </div>  -->
+<!-- <div class="carousel-item " style=" background: url(assets/images/6.jpg) no-repeat center center; background-size:cover ; background-attachment: fixed;" data-bs-interval="9000">
+     
+        <div class="carousel-caption d-none d-md-block">
+          <h1>افضل<br>العروض <span >على الموبايلات</span></h1>
+      </div> 
+      </div> -->
+
+
+
+<!-- </div> -->
+<!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+    <div class="carousel-indicators" >
+      <button type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleControlsNoTouching" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+  </div> -->
+<!-- Carousel wrapper -->
+<div id="carouselDarkVariant" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  
+  <!-- Indicators -->
+  <div class="carousel-indicators">
+    <button data-bs-target="#carouselDarkVariant" data-bs-slide-to="0" class="active" aria-current="true"
+      aria-label="Slide 1"></button>
+    <button data-bs-target="#carouselDarkVariant" data-bs-slide-to="1" aria-label="Slide 1"></button>
+    <button data-bs-target="#carouselDarkVariant" data-bs-slide-to="2" aria-label="Slide 1"></button>
+  </div>
+
+  <!-- Inner -->
+  <div class="carousel-inner">
+    <!-- Single item -->
+    <div class="carousel-item active" 
+      style=" background: url(assets/images/17.jpg) no-repeat center center;background-size:cover ;"
+      data-bs-interval="6000">
+
+      <div class="carousel-caption">
+        
+       <h1>خصومات <br> <span>تصل الى</span><br><span class="caption-span underlined underline-mask underline-overflow">50%</span></h1> 
+
+      </div>
+    </div>
+
+    <!-- Single item -->
+    <div class="carousel-item "
+      style=" background: url(assets/images/12.jpg) no-repeat center center;background-size:cover ; background-attachment: fixed;"
+      data-bs-interval="3000">
+
+      <div class="carousel-caption  d-md-block">
+      <h1>افضل عرض<br>على<br><span style="color:#BB2649;">الموبايل</span></h1>
+        
+        
+      </div>
+    </div>
+    <!-- Single item -->
+    <div class="carousel-item"
+      style=" background: url(assets/images/16.jpg) no-repeat center center;background-size:cover ; background-attachment: fixed;"
+      data-bs-interval="3000">
+      <div class="carousel-caption  d-md-block">
+        <h1>عروض<br> خاصه جدا<br><span style="color:
+          #BB2649;">للابتوب</span></h1>
+          
+          
+        </div>
+    </div>
+  </div>
+  <!-- Inner -->
+
+
+
+</div>
+<!-- Carousel wrapper -->
+
+
+
+
+
+<div class="container mb-4" style="margin-top: 70px;">
+
+
+
+
+  <section class="parentcat mt-5 mb-5" *ngIf="categories?.length!==0">
+    <h3 class="text-center pb-3" style="margin-bottom: 20px">
+      عرض حسب التصنيف
+    </h3>
+    <div class="row">
+   
+      <div class="col-md-4 col-sm-6 col-6  mb-4 mt-4 hide-on-init animated-delay-1" *ngFor="let cat of categories" routerLink="/shop/category/{{cat.id}}" animateOnScroll animationName="animated fadeInUp">
+        <div class="card-body img-thumbnail" style="position: relative" >
+          <div class="overlay d-flex justify-content-center align-items-center">
+            <div class='content mt-3 '>
+              <h4 class="category-header"><span class="border  border-secondary rounded p-2" style="background-color: #BB2649">{{cat.name}}</span></h4>
+            </div>
+  
+          </div>
+
+          <div class="category-img" >
+
+            <img style=" height: 450px;width: 100%;" 
+              src="{{cat.pictureUrl}}" />
+          </div>
+
+          
+
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- <div class="rowstyle="background-color: #f5f9f9;"> -->
+
+</div>
+
+
+
+
+  <!--section of Discounted producst -->
+
+<div class="container mb-4" style="margin-top: 60px; margin-bottom: 60px;">
+
+
+
+
+  <section class="parentcat mt-5 mb-5" *ngIf="discountetdProducts?.length!==0">
+    <h3 class="text-center pb-3" style="margin-bottom: 20px">
+    خصومات 50% علي المنتجات !!
+    </h3>
+    <div class="row">
+   
+      <div class="col-md-4 col-sm-6 col-6  mb-4 mt-4 hide-on-init animated-delay-1" *ngFor="let product of  discountetdProducts"  animateOnScroll animationName="animated fadeInUp">
+        <div class="card-body img-thumbnail" style="position: relative"  routerLink="/shop/category/{{product.categoryParenitId
+        }}/categoryshop/{{product?.categoryId}}/product/{{product?.id}}">
+          <div class="overlay d-flex justify-content-center align-items-center">
+            
+  
+          </div>
+
+          <div class="category-img" >
+            <span class="badge rounded-pill bg-danger text-light  p-2" *ngIf="product?.discountEnabled"> {{product?.amoutWithPercentage
+            }} % خصم</span>
+
+            <img style=" height: 400px;width: 100%;" 
+              src="{{product?.pictureUrl}}" />
+          </div>
+
+       
+          
+
+        </div>
+
+        <div class='mt-2'>
+          <h5 >{{product.name}}</h5>
+          <p  style="font-size: 1rem; color: #bbb;  text-decoration: line-through; margin: 5px 0px;">{{product?.price}} EGP</p>
+
+          <p  style="font-size: 1.2rem; color: #BB2649; font-weight: bold;margin: 5px 0px;">{{product?.priceAfterDiscount}}EGP</p>
+
+        </div>
+
+
+
+      </div>
+    </div>
+    <div class="d-flex mt-2 mb-4 ">
+      <a style="text-decoration:none;color:#555 ;font-size: 1.1rem;font-weight:bold ;cursor: pointer;"(click)="navigateTo()" >  المزيد...</a>
+    </div>
+  </section>
+
+</div>
+
+
+<!----------->
+
+
+
+
+
+<section class="last-product hide-on-init" dir="ltr" style="background-color: #f4f4f4;padding:50px 0px" animateOnScroll animationName="animated fadeIn">
+  <div class="container">
+    <h3 class="text-center  pb-3">وصل حديثا</h3>
+    <swiper effect="fade" [config]="config" [autoplay]="{
+  delay: 2500,
+  disableOnInteraction: false
+}" class="myswiper">
+      <ng-template swiperSlide *ngFor="let product of products">
+        <div class="swiper-slide">
+          <div class="card-body" style="height:100% ;">
+            <img src="{{product.pictureUrl}}" class="img-thumbnail" />
+            <div class="card-text">
+              <h5>{{product.name}}</h5>
+              <!-- <p class="mt-0 mb-1">{{product.price}} جنيه مصرى</p> -->
+
+
+
+              <p  style=" color: #BB2649; margin: 2px 0px;" *ngIf="!product?.discountEnabled">
+                {{product?.price}}EGP</p>
+            <div *ngIf="product?.discountEnabled">
+                <p  style=" color: #bbb;  margin: 2px 0px; text-decoration: line-through;">
+                    {{product?.price}}EGP
+                </p>
+                <span
+                    style=" color:#BB2649; font-weight: bold;margin: 2px 0px; ">{{product?.priceAfterDiscount}}EGP</span>
+            </div>
+
+
+              <!-- <p-button type="button" styleClass="p-button-secondary"label="عرض المنتج" class="ml-2" routerLink="/shop/product/{{product.id}}" routerLinkActive="router-link-active"  ></p-button>
+               -->
+               <button class="btn" routerLink="/shop/category/{{product.categoryParenitId
+               }}/categoryshop/{{product?.categoryId}}/product/{{product?.id}}" >تفاصيل</button>
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+      </ng-template>
+
+    </swiper>
+
+
+  </div>
+
+
+  <!-- <carousel [itemsPerSlide]="itemsPerSlide" [singleSlideOffset]="true" [interval]="2000" [indicatorsByChunk]="true"
+    class="mt-4 carousel-dark">
+    <slide *ngFor="let product of lastProducts;" style="border: 1px solid #e9e9eb;border-radius:10px"
+      class="shadow-sm">
+      <img [src]="product.pictureUrl" alt="image slide" style="display: block; width: 100%; height: 200px;"
+        class="img-fluid">
+      <div class="d-flex justify-content-center flex-column">
+        <h5 class="mt-3 mb-3 text-center" style="color: #2964a7;"><a routerLink="/shop/{{product.id}}"
+            style="text-decoration: none;">{{product.name}}</a></h5>
+        <p class="card-text mb-2 mt-2 text-center" style="font-weight:bold ;">{{product.price}}<span>جنيه</span></p>
+       <a class="btn btn-primary mb-2 mbt-4  text-center"  routerLink="/shop/{{product.id}}">تفاصيل المنتج</a> 
+      </div>
+    </slide>
+  </carousel> -->
+
+
+
+
+  <!--carsoul primeng-->
+
+
+
+  <!-- <p-carousel [value]="products" [numVisible]="4" [numScroll]="4" [circular]="true" [responsiveOptions]="responsiveOptions" [autoplayInterval]="3000">
+ 
+    <ng-template let-product pTemplate="item">
+      
+          <div class="product-item">
+            <div class="product-item-content">
+                <div class="mb-3">
+                    <img src="{{product.pictureUrl}}" class="product-image" />
+                </div>
+                <div>
+                    <h4 class="mb-1">{{product.name}}</h4>
+                    <h6 class="mt-0 mb-3">{{product.price}} جنيه مصرى</h6>
+                    <p-button type="button" styleClass="p-button-primary"label="عرض المنتج" class="ml-2" routerLink="/shop/product/{{product.id}}" routerLinkActive="router-link-active"  ></p-button>
+                  
+                    
+                </div>
+            </div>
+     
+        </div>
+    </ng-template>
+</p-carousel>
+-->
+
+
+
+</section>
+
+
+
+
+<section class="aboutUs container hide-on-init animated-delay-1" animateOnScroll animationName="animated fadeIn">
+
+
+  <div class="row mt-5">
+
+
+    <!-- <div class="col-md"><img style="border-radius: 10px; height: 500px;width: 100%;" src="assets/images/9.jpg"
+        al="aboutUs"> </div> -->
+
+    <div class="col-md content">
+
+      <h3>متجر سكاي نت</h3>
+      <p class="text-center">ذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص
+        العربى، حيث يمكنك أن
+        تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف</p>
+
+      <button class="btn" routerLink="/aboutUs">تعلم المزيد</button>
+
+
+    </div>
+  </div>
+
+
+  <div class='aboutus-end' style="margin-bottom: 30px">
+
+    <div class="row" style="padding:20px 0px">
+      <div class="col-md">
+        <span> <i class="fas fa-truck fa-3x"></i></span>
+        <h4>شحن مجانى</h4>
+        <p>ذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن
+          تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف</p>
+
+
+
+      </div>
+
+      <div class="col-md">
+        <span> <i class="far fa-check-circle fa-3x"></i></span>
+        <h4>ضمان مدى الحياه</h4>
+        <p>ذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة، لقد تم توليد هذا النص من مولد النص العربى، حيث يمكنك أن
+          تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحروف.</p>
+
+
+
+
+      </div>
+
+
+
+      <div class="col-md">
+        <span> <i class="fas fa-lock fa-3x"></i></span>
+        <h4>تسوق بأمان</h4>
+        <p> حيث يمكنك أن تولد مثل هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحرو حيث يمكنك أن تولد مثل
+          هذا النص أو العديد من النصوص الأخرى إضافة إلى زيادة عدد الحرو</p>
+
+
+
+
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+</section>

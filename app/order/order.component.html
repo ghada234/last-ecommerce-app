@@ -1,0 +1,29 @@
+
+<div class="container table-responsive mt-4 mb-4">
+
+    <table class="table  table-hover">
+        <thead>
+        <tr>
+            <th scope="col" class="text-uppercase text-center">الطلب</th>
+            <th scope="col" class="text-uppercase text-center">التاريخ</th>
+            <th scope="col" class="text-uppercase text-center">السعر النهائى</th>
+            <th scope="col" class="text-uppercase text-center">الحالة</th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr *ngFor="let order of orders" routerLink="/order/{{order.id}}">
+            <th  class=" justify-middle text-center" style="cursor: pointer;"  >
+             {{order.id}}
+            </th>
+            <td class="justify-middle text-center"  style="cursor: pointer;">{{order.orderDate|date:"medium"}}</td>
+            <td class="justify-middle text-center" style="cursor: pointer;">{{order. shippingPrice+ order.subTotal}}</td>
+            <td class="justify-middle text-center"style="cursor: pointer;" >{{order.status}}</td>
+   
+        </tr>
+    </tbody>
+
+
+    </table>
+</div>

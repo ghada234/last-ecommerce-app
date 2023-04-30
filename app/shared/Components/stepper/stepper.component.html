@@ -1,0 +1,17 @@
+<div class="container">
+
+    <ul class="nav nav-pills nav-justified mt-3 mb-5" style="background-color: #f7f7f7; padding: 0px;">
+
+        <!--let i=index like array [0,1,2] tonumber of steps-->
+        <li *ngFor="let step of steps ;let i=index" class="nav-item">
+
+            <button  class="nav-link btn-block" (click)="onClick(i)"  [disabled]="true" style="font-weight: bold;" [class.active]="selectedIndex===i">
+             {{step.label}}
+            </button>
+
+        </li>
+
+    </ul>
+    <ng-container [ngTemplateOutlet]="selected.content">
+    </ng-container>
+</div>

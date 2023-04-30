@@ -1,0 +1,459 @@
+
+.feature{height:250px}
+
+
+
+.overlay{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+  z-index: 4;
+  
+    width: 100%;
+    height: 100%;
+    
+}
+.carousel{
+  width:100%;
+
+
+
+}
+
+
+.carousel-inner{
+  width:100%
+}
+
+.carousel-inner .carousel-item {
+  width: 100% !important;
+  // height: calc(100vh - 75px);
+  height: 100vh;
+
+
+  .carousel-caption h1{
+   z-index: 5;
+   position: relative;
+   font-family: 'Lemonada', cursive;
+  }
+}
+
+.carousel-item:after {
+  content:"";
+  display:block;
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background:rgba(0,0,0,0.2);
+}
+
+
+// carousel slide img{
+
+//   height: calc(100vh - 83px);
+// }
+
+// @media only screen and (max-width: 600px) {
+//   carousel slide img{
+
+//     height: calc(100vh - 169px);
+//   }
+// }
+
+@media only screen and (max-width: 600px) {
+  .carousel-inner .carousel-item {
+  
+       height: 50vh;
+     }
+     .carousel-caption h1 {
+      font-size:1rem !important;
+     }
+     .caption-span{
+      font-size: clamp(1.5rem, 4vmin, 2rem) !important;}
+
+     
+
+   }
+
+   /*screen*/
+   //xs small screen
+   @media only screen and (max-width: 575.98px) {
+    .card-body .content h4{
+      font-size: .5rem !important
+    }
+   .category-img img{
+      height:200px !important;
+   }
+   .myswiper{
+    height:290px !important;
+   }
+   .swiper-slide {
+    font-size: .7rem !important;
+   }
+   .swiper-slide h5 {
+    font-size: .9rem !important;
+   }
+   .swiper-slide .btn{
+    font-size: .7rem;
+   }
+   .swiper-slide img{height:55% !important}
+  }
+  
+   //small device
+   @media  (max-width: 767.98px) and (min-width:576px) {
+    .card-body .content h4{
+      font-size: .7rem !important
+    }
+   .category-img img{
+      height:250px !important;
+   }
+   .myswiper{
+    height:400px !important;
+   }
+   .swiper-slide {
+    font-size: .9rem !important;
+   }
+   .swiper-slide h5 {
+    font-size: .9rem !important;
+   }
+   .swiper-slide .btn{
+    font-size: .7rem;
+   }
+   .swiper-slide img{height:55% !important}
+  }
+
+  .category-img{
+    position: relative;
+  }
+  .category-img span{
+    position: absolute;
+    top:20px;
+    right: 10px;
+    z-index: 999;
+
+  }
+  
+   /*mediem*/
+   @media (max-width: 991.98px) and (min-width:768px) {
+    .card-body .content h4{
+      font-size: 1rem !important
+    }
+   .category-img img{
+      height:300px !important;
+   } 
+   .myswiper{
+    height:450px !important;
+   }
+   
+   .swiper-slide {
+    font-size: 1rem !important;
+   }
+   .swiper-slide h5 {
+    font-size: 1rem !important;
+   }
+   .swiper-slide .btn{
+    font-size: .9rem;
+   }
+   .swiper-slide img{height:57% !important}
+
+ 
+  }
+
+
+  
+
+
+
+.aboutUs h3{
+    padding: 40px 0px;
+  
+    text-align: center;
+    font-family: 'Lemonada', cursive;
+
+}
+.card-body{
+	border:1px solid #BB2649;
+	border-radius: 5px;
+}
+
+
+.last-product h2{
+ 
+  color:#2964a7 ;
+  text-align: center;
+
+}
+
+.aboutUs img{
+    max-width: 100%;
+}
+
+.aboutUs .content{
+    display: flex;
+  
+
+    flex-direction: column;
+    
+
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media all and (max-width: 576px) and (min-width: 200px){
+
+    .bestSeller img {
+        max-height: 150px; 
+      }
+
+  }
+
+
+  /*about us end*/
+
+  .aboutus-end{
+      padding-top: 30px;
+      text-align: center;
+  }
+
+  .aboutus-end span, .aboutus-end  h4{
+color:#BB2649;
+  }
+
+  .aboutus-end  h4{
+      margin-top: 15px;
+  }
+
+  
+  mat-card{
+    margin-top: 60px;
+  }
+
+  mat-card img{
+    object-fit: cover; /*this makes the image in src fit to the size specified below*/
+ /* Here you can use wherever you want to specify the width and also the height of the <img>*/
+    height: 80%;
+  }
+
+  .example-card {
+    max-width: 400px;
+  }
+  
+  .card-body{
+    position: relative;
+    cursor: pointer;
+  }
+  .card-body .content{
+    // position: absolute;
+    // bottom: 20px;
+    // left: 0;
+    // z-index: -1;
+    // display: block;
+// width: 300px;
+   
+  
+    font-size: .8rem;
+    text-decoration: none;
+ 
+ 
+
+  }
+
+
+.category-img{
+
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	overflow: hidden;
+
+  position: relative;
+  
+
+}
+.category-img img{
+	-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: 2.4s ease-in-out;
+	transition: 2.4s ease-in-out;
+}
+.card-body:hover .category-img img{
+  -webkit-transform: scale(1.2);
+	transform: scale(1.2);
+
+}
+.category-header{
+  text-align: center;
+  color: #fff;
+  font-family: 'Lemonada', cursive;
+  font-size:1rem
+}
+
+  .product-item-content {
+        border: 1px solid var(--surface-d);
+        border-radius: 3px;
+        margin: .3rem;
+        text-align: center;
+        padding: 2rem 0;
+    }
+
+    .product-image {
+        width: 60%;
+        height:200px;
+        border-radius: 10px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23)
+    }
+
+   
+
+
+.myswiper {
+  width: 100%;
+  height: 550px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  height:100%
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+}
+
+
+
+ .carousel-caption{
+
+  bottom:3rem;
+  left:-25%;
+ 
+
+
+
+
+ }
+
+
+
+
+
+
+
+
+ .carousel-caption h1 {
+  // font-size: clamp(3rem, 12vmin, 8rem);
+
+  // color: #fff !important
+  font-size: 3rem;
+  color: #fff !important;
+
+  // text-shadow: 0px 0px 0 rgb(17,76,143),
+  // -1px 1px 0 rgb(-8,51,118),
+  // -2px 2px 0 rgb(-32,27,94),
+  // -3px 3px 0 rgb(-57,2,69),
+  // -4px 4px  0 rgb(-81,-22,45),
+  // -5px 5px 4px rgba(0,0,0,0.81),
+  // -5px 5px 1px rgba(0,0,0,0.5),
+  // 0px 0px 4px rgba(0,0,0,.2);
+ }
+
+
+
+.underlined {
+/*   background: red; */
+  position: relative;
+}
+
+.underline-mask:after {
+  content: '';
+  position: absolute;
+  top: 95%;
+  width: 150%;
+  aspect-ratio: 3 / 1;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 50%;
+  border: 6px solid hsl(280 80% 50%);
+  /* Use a conic gradient mask to hide and show the bits you want */
+  --spread: 140deg;
+  --start: 290deg;
+  mask: conic-gradient(from var(--start), white 0 var(--spread), transparent var(--spread));
+}
+
+
+.underline-overflow {
+  display: inline-block;
+  /* A little extra padding and overflow hidden   */
+  overflow: hidden;
+  padding-bottom: clamp(1rem, 2vmin, 2rem);
+}
+.underline-overflow:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  height: 150%;
+  aspect-ratio: 2.5 / 1;
+  left: 50%;
+  transform: translate(-50%, -10%);
+  border-radius: 50%;
+  border: 6px solid hsl(10 80% 50%);
+}
+
+.underline-clip:after {
+  content: '';
+  position: absolute;
+  top: 95%;
+  width: 150%;
+  aspect-ratio: 3 / 1;
+  left: 50%;
+  transform: translate(-50%, 0);
+  border-radius: 50%;
+  border: 6px solid hsl(130 80% 50%);
+  /* Use a clip-path to hide and show the bits you want */
+  clip-path: polygon(0 0, 50% 50%, 100% 0);
+}
+
+ .caption-span{
+  font-size: clamp(4rem, 14vmin, 9rem);
+  color:red;
+  font-weight: bolder;
+
+ }
+.btn{
+  background: #BB2649;
+  color:#fff
+}
+
+h3{
+  font-family:'Lemonada', cursive;
+  font-size: 1.4rem;
+}
+
+
+.custom-bread-crumb ::ng-deep{
+  display: none;
+}

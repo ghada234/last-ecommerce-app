@@ -1,0 +1,33 @@
+  
+
+
+<div class="container"  style="margin-top: 50px;">
+
+ 
+    <section class="parentcat mt-5 mb-5">
+        <div class="row">
+          <div class="col-md-3 col-sm-6 col-6 mb-3 mt-5" *ngFor="let cat of this.category"   >
+            
+             <div class="card-body" style="position: relative;"   routerLink="/shop/category/{{id}}/categoryshop/{{cat.id}}"   >
+              <div class="overlay d-flex justify-content-center align-items-center">
+                <div class="content">
+                  <h4 class="category-header "> <span class="border  border-secondary rounded p-2" style="background-color: #BB2649">{{cat?.name}}</span></h4>
+                </div>
+  
+              </div>
+              <div class="category-img">
+            
+                <img style="height: 400px;width: 100%;" src="{{cat?.pictureUrl}}" />
+              </div>
+              
+             </div>
+            
+            
+           
+           
+    
+          </div>
+        </div>
+      </section>
+</div>
+

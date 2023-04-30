@@ -1,0 +1,28 @@
+<div class="baskettotal">
+
+    <div class="container">
+        <h4 class="text-center" style="padding: 10px; background-color: #BB2649;color:#fff">ملخص الطلب</h4>
+        <p *ngIf="!isOrder">مصاريف الشحن سوف تضاف لاحقا</p>
+        <ul class="list-unstyled mt-3 mb-3">
+            <li class="d-flex justify-content-between mb-2">
+
+                <strong>مصاريف الشحن</strong>
+                <strong>{{shippingPrice}}</strong>
+            </li>
+
+            <li class="d-flex justify-content-between mb-2">
+
+                <strong>تكلفة الطلب</strong>
+                <strong>{{subTotal}}</strong>
+            </li>
+
+            <li class="d-flex justify-content-between mb-2">
+
+                <strong>تكلفة الطلب بعد مصاريف الشحن</strong>
+                <strong>{{total}}</strong>
+            </li>
+
+
+        </ul>
+    </div>
+</div>

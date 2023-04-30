@@ -1,0 +1,47 @@
+
+  .active{
+    color: #000 !important;
+  }
+  .activesidebar{
+    color:#BB2649;
+  }
+  .list-item{
+   
+      cursor:pointer
+  }
+  
+  
+  .mat-expansion-panel-header{
+    margin: 10px 0px !important;
+  }
+  
+  
+  @media  (max-width: 767.98px){
+   .filter-sidebar{
+    display: none;
+  
+   }
+   .filterbutton{
+    display: block;
+   }
+   
+  
+  
+   }
+  
+  
+   @media  (min-width: 768.00px){
+    .filter-sidebar{
+     display: block;
+   
+    }
+    .filterbutton{
+     display: none;
+    }
+  }
+  
+  mat-slider {
+    width: 300px;
+  }
+  
+  

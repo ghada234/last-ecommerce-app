@@ -1,0 +1,59 @@
+  
+
+  <div class="container" >
+    <p *ngIf="(WishList$|async)===null" >لا يوجد منتجات في قائمه الرغبات </p>
+  </div>
+<div class="container table-responsive" style="margin-top: 90px;" *ngIf="(WishList$ | async) as wishlist" >
+
+    <table class="table  table-bordered">
+  
+        <thead>
+            <tr>
+                <th scope="col" class="text-uppercase text-center" >#</th>
+                <th scope="col" class="text-uppercase text-center">المنتج</th>
+              
+                <th scope="col" class="text-uppercase text-center">السعر</th>
+
+                <th scope="col" class="text-uppercase text-center">اضافه الي السله</th>
+                <th scope="col" class="text-uppercase text-center">حذف</th>
+
+              
+  
+            </tr>
+        </thead>
+  
+        <tbody>
+            <tr *ngFor="let item of wishlist.wishListItems">
+                <td class="d-flex justify-content-center">
+                    <div ><img src="{{item. pictureUrl}}" class="img-fluid" style="width:80px ;height: 80px; border-radius: 50%;"></div>
+                </td>
+                
+                <td class="justify-middle text-center">{{item?.productName}}</td>
+                <td  class="justify-middle text-center">
+                    <p  style=" color: #BB2649;" *ngIf="!item?.isDiscount">
+                        {{item?.price}}EGP</p>
+                    <div *ngIf="item?.isDiscount">
+                        <p  style=" color: #bbb;   text-decoration: line-through;">
+                            {{item?.price}}EGP
+                        </p>
+                        <span
+                            style=" color:#BB2649; font-weight: bold; ">{{item?.priceAfterDiscount}}EGP</span>
+                    </div>
+                </td>
+            
+
+
+
+                <td  class="justify-middle text-center primary" style="cursor: pointer;" (click)="AddItemToBasket(item.id)"><i class="pi pi-shopping-cart text-primary"style="font-size: 1.5rem;"  ></i></td>
+                <td  class="justify-middle text-center " style="cursor: pointer;" (click)="DeleteItemFromBasket(item)"><i class="pi pi-trash"style="font-size: 1.5rem;color:red" ></i></td>
+              
+      
+  
+            </tr>
+        </tbody>
+  
+  
+    </table>
+  
+  
+  </div>

@@ -1,0 +1,38 @@
+p{font-size: 1.2rem;
+
+
+}
+.basket-image img{
+    height:200px;
+    width:200px
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .content{
+        text-align: center;
+    }
+    .basket-img img{
+        height:60px ;
+        width:50px;
+    }
+    .basket-image{
+
+        justify-content: center !important;
+        margin-top: 10px;
+    }
+   
+   
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+    .content{
+        text-align: center;
+    }
+    .basket-img{
+        height:200px ;
+    }
+}

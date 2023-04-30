@@ -1,0 +1,31 @@
+<div class="mb-3 mt-3">
+    <!-- <div class="input-group-prepend" style="margin-left: 10px;">
+         <span class="input-group-text"><i class="fas fa-user"></i></span> -->
+        <!-- <label>{{label}}</label> -->
+    <!-- </div> --> 
+    <label for="exampleFormControlInput1" class="form-label">{{label}}</label>
+
+    <!--pending is tthe status of formcontrol when make asyc validation request-->
+    <!-- <div  *ngIf="controlDir && controlDir.control && controlDir.control.status == 'PENDING'" class="fa fa-spinner fa-spin loader"></div> -->
+    <input [type]="type" style="color:#000;display: block;" class="form-control" 
+        (input)="onChange($event.target.value)" (blur)="onTouched()" #input
+        placeholder={{placeholder}}
+        [ngClass]="(controlDir && controlDir.control&&controlDir.control.touched)?!controlDir.control.valid ?'is-invalid':'is-valid':null">
+
+    <p class="invalid-feedback" style="margin-top: 10px;"
+        *ngIf="controlDir && controlDir.control&&!controlDir.control.valid&&controlDir.control.touched">
+        <span *ngIf="controlDir.control.errors?.required" class="mt-2"> {{label}} مطلوب</span>
+        <span *ngIf="controlDir.control.errors?.pattern" class="mt-2">{{label}} غير مسموح</span>
+        
+    </p>
+    <div class="invalid-feedback d-block"  *ngIf="controlDir && controlDir.control&&!controlDir.control.valid&&controlDir.control.dirty">
+        <span *ngIf="controlDir.control.errors?.emailExist" class="mt-2"> الحساب الالكتروني موجود بالفعل</span>
+    </div>
+
+   
+
+
+</div>
+
+
+<!--*ngIf="controlDir&&controlDir.control&&controlDir.control.status==='PENDING'"-->

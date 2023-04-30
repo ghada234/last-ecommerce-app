@@ -1,0 +1,179 @@
+<!-- <div
+  class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4  bg-white border-bottom shadow-sm justify-content-between">
+  <img src="assets/images/logo.png" style="width:70px;height:50px ;cursor: pointer;" routerLink="/">
+
+
+  <nav class="my-2 my-md-0 mr-md-3" style="font-weight: bold; font-size: .9rem;">
+    <a class="p-3" routerLink="/home" routerLinkActive="activelink">الرئيسية</a> 
+    <div *ngFor="let cat of categories" style="display: inline-block;" class="p-3">
+      <a  routerLink='shop/category/{{cat.id}}' routerLinkActive="activelink"  style="text-decoration: none;"  [routerLinkActiveOptions]="{exact:true}">{{cat.name}}</a>
+    </div> 
+
+   
+    <a class="p-3">اتصل بنا</a>
+<a class="p-2" [routerLink]="['/shop']" routerLinkActive="activelink">تسوق</a>  -->
+
+<!-- <a class="p-2" [routerLink]="['/errortest']" routerLinkActive="activelink">ErrorTest</a> -->
+
+<!-- </nav>
+
+  <div class="d-flex align-items-center mt-2">
+    <a [routerLink]="['/basket']" class='position-relative' style="text-decoration: none;color:#2964a7">
+    <i class="fas fa-shopping-cart fa-2x ml-2" style="color: #575d64;"></i> -->
+<!-- <i class="pi pi-shopping-cart ml-2" style="font-size: 2rem;color: #575d64"></i>
+      <div class="cart-num" style="position: absolute;" *ngIf="(basket$ | async) as basket">{{basket.items.length}}
+      </div>
+    </a>
+    <ng-container *ngIf="(currentUser$ | async)==null">
+      <a class="btn btn-outline-secondary ml-2 tbutton" [routerLink]="['/account/login']" routerLinkActive="active-button">تسجيل الدخول
+        </a>
+      <a class="btn btn-outline-secondary ml-2 tbutton" [routerLink]="['/account/register']"
+        routerLinkActive="active-button">حساب جديد</a>
+    </ng-container>
+
+    <ng-container *ngIf="(currentUser$ | async)">
+
+      <div class="btn-group ml-3 mr-3 mt-2" dropdown id="button-basic">
+        <a  aria-controls="dropdown-basic" dropdownToggle class="dropdown-toggle">اهلا بك<strong>{{(currentUser$ | async).displayName}}</strong></a>
+        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-basic">
+          <li role="menuitem"><a class="dropdown-item" href="#"> <i  class="ml-2 mr-2 fas fa-shopping-cart"></i>السلة</a></li>
+
+          <li role="menuitem"><a class="dropdown-item" href="#" [routerLink]="['/order']" routerLinkActive="router-link-active" > <i  class="ml-2 mr-2 fa fa-history"></i> طلباتك</a></li>
+          <li role="menuitem"><a class="dropdown-item" href="#" (click)="logOut()"> <i class=" ml-2 mr-2 fa fa-user" ></i>تسجيل الخروج</a></li>
+        </ul>
+      </div>
+      
+
+    </ng-container>
+
+  </div>
+</div> -->
+
+
+
+
+<nav class="navbar navbar-expand-sm fixed-top navbar-scroll " id="nav" style="font-size: 1rem;">
+  <div class="container-fluid">
+  
+
+
+
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="  mb-lg-0 navbar-brand me-3">
+      <img src="assets/images/logo.png" style="width:100px;height:40px ;cursor: pointer;" routerLink="/" loading="lazy">
+
+    </a>
+
+   
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link " aria-current="page" routerLink="/home" routerLinkActive="activelink">الرئيسيه</a>
+        </li>
+
+
+        <li class="nav-item " *ngFor="let cate of categories">
+          <a class="nav-link" routerLink='shop/category/{{cate.id}}' routerLinkActive="activelink">{{cate.name}}</a>
+        </li>
+        <li class="nav-item dropdown" *ngIf="(currentUser$ | async)">
+          <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            اهلا بك<strong>{{(currentUser$ | async).displayName}}</strong>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item"><i class="pi pi-shopping-cart"></i>السله</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/order']" routerLinkActive="router-link-active"><i
+                  class="ml-2 mr-2 fa fa-history"></i> طلباتك</a></li>
+            <li><a class="dropdown-item" (click)="logOut()"><i class=" ml-2 mr-2 fa fa-user"></i>تسجيل الخروج</a></li>
+          </ul>
+        </li>
+  
+        <div class="d-flex" role="search" *ngIf="(currentUser$ | async)==null"  style="margin-right: 10px;">
+          <a class="accountlink nav-link" style="margin-left: 5px;" [routerLink]="['/account/login']"
+            routerLinkActive="active-button">تسجيل الدخول
+          </a>
+          <a class="accountlink nav-link" [routerLink]="['/account/register']"
+            routerLinkActive="active-button">حساب جديد</a>
+        </div>
+  
+
+
+
+
+      </ul>
+
+
+      <div>
+
+
+
+      </div>
+    </div>
+  
+    
+    <div class="d-flex align-items-center mb-lg-0 navbarleft me-3">
+
+      <div class="input-group" style="margin-left: 15px;position: relative;">
+        
+          <input id="search-input" #searchElement type="search" id="form1" class="form-control rounded"
+          (input)="onSearchChange($event.target.value)"
+          />
+          <span class="input-group-text border-0" id="search-addon">
+            <i class="fas fa-search"></i>
+          </span>
+ 
+        
+        <!-- <button id="search-button" type="button" class="btn btn-primary" (click)="onSearch()">
+          <i class="fas fa-search"></i>
+        </button> -->
+
+        <div class="filterbar">
+          <div class="row mt-1" *ngFor="let product of products" routerLink="/shop/category/{{product.categoryParenitId
+          }}/categoryshop/{{product?.categoryId}}/product/{{product?.id}}" style="cursor: pointer;" >
+            <div class="col-md-3"><img src="{{product. pictureUrl}}"style="height:100%;width:100%"></div>
+            <div class="col-md-9">
+              <p style="margin-bottom: .2rem;">{{product.name}}</p>
+
+              <div *ngIf="product.priceAfterDiscount===0">
+                <p  style=" color: #000;  margin-bottom: .1rem;" >{{product?.price}} EGP</p>
+              </div>
+
+              <div *ngIf="product.priceAfterDiscount!==0">
+                <p  style=" color: #bbb;  margin-bottom: .1rem;text-decoration: line-through;" >{{product?.price}} EGP</p>
+
+              <p  style=" color: #BB2649; margin-bottom: .1rem; font-weight: bold;">{{product?.priceAfterDiscount}}EGP</p>
+
+              </div>
+              
+            </div>
+
+          </div>
+
+
+        </div>
+      </div>
+      <a class="basket-icon" style="display:inline-block;margin-left: 12px;"  [routerLink]="['/wishlist']">
+        <i class="pi pi-heart" style="font-size: 1.5rem;"></i>
+      </a>
+      <a [routerLink]="['/basket']" class='position-relative basket-icon' style="text-decoration: none;">
+
+        <i class="pi pi-shopping-cart"style="font-size: 1.5rem;" ></i>
+        <div class="cart-num" style="position: absolute;" *ngIf="(basket$ | async) as basket">{{basket.items.length}}
+        </div>
+      </a>
+     
+
+
+      
+
+
+    </div>
+
+  </div>
+</nav>
+
+

@@ -1,0 +1,9 @@
+<header>
+    <p class="" style="font-weight: bold" *ngIf="totalCount &&totalCount>0">
+      اظهار <strong style="color:#BB2649">{{(pageIndex-1)*pageSize+1}}-
+            {{(pageIndex)*pageSize>totalCount?
+            totalCount:(pageIndex)*pageSize}}
+        </strong> منتج من <strong style="color:#BB2649"> {{totalCount}}</strong>منتج
+    </p>
+    <!-- <p *ngIf="totalCount==0" style="font-weight: bold"> No product Found</p> -->
+</header>

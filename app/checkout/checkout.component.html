@@ -1,0 +1,37 @@
+<div class="container mt-4 mb-4">
+
+  <div class="row">
+    <div class="col-md-10">
+      <!--linearmodeselectted ===true mean that i can't gonext step until valid form-->
+      <app-stepper  [LinearModeSelected]="true" #appStepper>
+        <cdk-step [label]="'العنوان'" [completed]="checkoutForm.get('AddressForm').valid">
+          <app-checkout-address [checkoutForm]="checkoutForm"></app-checkout-address>
+        </cdk-step>
+        <cdk-step [label]="'الشحن'" [completed]="checkoutForm.get('DeliveryForm').valid">
+          <app-checkout-delivery [checkoutForm]="checkoutForm"></app-checkout-delivery>
+        </cdk-step>
+        <cdk-step [label]="'الطلب'">
+          <app-checkout-reviewt [appStepper]="appStepper"></app-checkout-reviewt>
+        </cdk-step>
+        <cdk-step [label]="'الدفع'" >
+          <app-checkout-payment [checkoutForm]="checkoutForm"></app-checkout-payment>
+        </cdk-step>
+
+      </app-stepper>
+    </div>
+
+    
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 mt-5" *ngIf="(basketTotal$ | async)">
+      <app-order-totals [shippingPrice]="(basketTotal$ | async).shipping" [subTotal]="(basketTotal$ | async).subTotal"
+        [total]="(basketTotal$ | async).total">
+
+      </app-order-totals>
+    </div>
+
+  </div>
+
+
+</div>

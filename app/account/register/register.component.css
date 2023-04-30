@@ -1,0 +1,92 @@
+
+.container{
+    height: 100%;
+    align-content: center;
+    }
+    
+    .card{
+  
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 500px;
+    background-color: #f5f5f5 !important;
+    border-radius: 10px;
+    }
+    
+    .social_icon span{
+    font-size: 60px;
+    margin-left: 10px;
+    color: #BB2649;
+    transition: all .4s ease-in-out;
+    }
+    
+    .social_icon span:hover{
+    color: #a7adad;
+    cursor: pointer;
+    }
+    
+    .card-header h3{
+    color: #000;
+    }
+    .form-control{
+        font-weight: bold;
+        color:#000
+    }
+    
+    .social_icon{
+    position: absolute;
+    right: 20px;
+    top: -45px;
+    }
+    .form-group{color:#000}
+   
+    .input-group-prepend span{
+    width: 50px;
+    background-color:#BB2649;
+    color: #fff;
+    border:0 !important;
+    }
+    
+    input:focus{
+    outline: 0 0 0 0  !important;
+    box-shadow: 0 0 0 0 !important;
+    
+    }
+    
+    .remember{
+    color: #a7adad;
+    }
+    
+    .remember input
+    {
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    margin-right: 5px;
+    }
+    
+    .login_btn{
+    color: #fff;
+    background-color: #BB2649;
+    width: 100%;
+    transition: all .4s ease-in-out;
+    }
+    
+    .login_btn:hover{
+    color: 000;
+    background-color: #a7adad;
+    }
+    
+    .links{
+    color: 000;
+   
+    }
+    
+    .links a{
+    margin-left: 4px;
+    text-decoration: none;
+    color:#BB2649 ;
+    }
+
+    input{display: block;}
+    .invalid-feedback {display: block;}

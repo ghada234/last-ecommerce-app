@@ -1,0 +1,97 @@
+a{ 
+
+font-weight: bold;
+text-decoration: none;
+color: #000;
+}
+
+.img-container{
+    position: relative;
+  
+  }
+  .badge{
+  position: absolute;
+  top:10px;
+  right:10px;
+  font-size: 1rem;
+  }
+  
+  .image {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color:rgba(245, 245, 245,.5);
+   
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+  }
+  
+  .img-container:hover .overlay {
+    width: 100%;
+  }
+  
+  .buttons {
+   
+ 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    font-size: .5rem;
+  }
+  .btn-primary{
+    background:#BB2649 ;
+    border: 1px solid #ccc;
+  }
+
+
+
+  /*screen*/
+  /*xs*/
+
+  @media only screen and (max-width: 575.98px) {
+   .card-body .content h4{
+     font-size: .5rem !important
+   }
+   .img-container img{
+     height:200px !important;
+  }
+ 
+ }
+ 
+  /*small*/
+  @media  (max-width: 767.98px) and (min-width:576px) {
+   .card-body .content h4{
+     font-size: .7rem !important
+   }
+   .img-container img{
+     height:250px !important;
+  }
+ 
+  }
+
+ 
+ 
+  /*mediem*/
+  @media (max-width: 991.98px) and(min-width:768px) {
+   .card-body .content h4{
+     font-size: 1rem !important
+   }
+   .img-container img{
+     height:300px !important;
+  } 
+
+}

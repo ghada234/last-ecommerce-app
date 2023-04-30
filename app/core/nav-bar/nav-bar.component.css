@@ -1,0 +1,156 @@
+.cart-num{
+
+ 
+ border-radius: 50%;
+font-size: .8rem;
+background: #BB2649;
+color:#fff;
+padding: 2px 7px;
+text-align: center;
+top:-10px;
+left:-10px;
+}
+.active-button{background:#BB2649;color:#fff !important;border-radius: 5px;}
+
+a{text-decoration: none;
+
+cursor: pointer;}
+
+
+
+
+
+.tbutton{
+    transition: all .5s ease-in-out;
+}
+
+.pi-shopping-cart{
+    
+    font-size: 2rem;
+   }
+
+
+@media all and (max-width: 576px) and (min-width: 200px) {
+    .pi-shopping-cart{
+    
+        font-size: 1.8rem;
+       }
+       .btn{
+        font-size: .8rem;
+       }
+
+     }
+
+        /*navbar scrolled  and before scrolled*/
+
+     /*navbar for scroll*/
+     .navbar-scroll .activelink{
+      border-bottom:  2px solid #BB2649 !important;
+  
+  
+  
+   
+  } 
+  
+  .navbar-scrolled .activelink{
+    border-bottom:  2px solid #fff !important;
+  
+  
+  } 
+
+.navbar-scroll{
+  height: 80px;
+  background-color: transparent;
+  border: none;
+ 
+  z-index: 100;
+  transition: background-color 1s ease 0s;
+}
+
+@media only screen and (max-width: 575.98px) {
+  .navbar-scroll,.navbar-scroll .navbar-nav,.navbar-scroll .container-fluid{
+    background: #fff !important;
+  }
+
+  .navbar-scrolled,.navbar-scrolled .navbar-nav,.navbar-scrolled .container-fluid{
+    background: #fff !important;
+
+  } 
+  .navbar-scrolled .active-button{
+    color:#fff !important
+  }
+  .navbar-scrolled .nav-link,
+  .navbar-scrolled .navbar-toggler-icon,.navbar-scrolled .basket-icon {
+    color: #222 !important;
+  } 
+  .navbar-scrolled  .activelink{
+    box-shadow: none !important;
+    color:#BB2649 !important
+  }
+ 
+
+  .navbar-scroll  .activelink{
+    border: none !important;
+    color:#BB2649 !important
+  }
+
+ 
+    }
+
+
+     /* Color of the links BEFORE scroll */
+.navbar-scroll .nav-link,
+.navbar-scroll .navbar-toggler-icon,.navbar-scroll .basket-icon {
+ 
+  color: #333;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.navbar-scroll .accountlink{
+  color:#BB2649
+}
+.navbar-scrolled .accountlink{
+  color:#BB2649
+}
+
+.navbar-scrolled .nav-link,
+.navbar-scrolled .navbar-toggler-icon,.navbar-scrolled .basket-icon {
+  color: #fff;
+} 
+.navbar-scrolled .accountlink{
+  color:#fff;
+}
+
+/* Color of the navbar AFTER scroll */
+.navbar-scrolled {
+  background-color: #6c757d;
+}
+
+/* An optional height of the navbar AFTER scroll */
+
+
+.btn{
+
+background-color: #BB2649;
+
+font-size:.7rem;
+color:#fff;
+
+
+}
+.accountlink{
+
+  font-weight: bolder;
+font-size: .9rem !important;
+  margin-left: 10px;
+}
+
+
+.filterbar{
+  width: 100%;
+
+  position: absolute;
+  top:38px;
+  left:0px;
+  background-color: #fff;
+}

@@ -1,0 +1,17 @@
+
+
+
+<ng-container *ngIf="(breadCrumbs$ | async) as breadcrumbs" >
+       
+        <div  *ngIf="breadcrumbs.label!= 'الرئيسيه'">
+                <app-ng-dynamic-breadcrumb  [bgColor]="'#eee'" [fontSize]="'18px'" [fontColor]="'#0275d8'" [lastLinkColor]="'#000'"></app-ng-dynamic-breadcrumb>
+        </div>
+                
+     
+</ng-container>
+
+       
+
+                 
+          
+    

@@ -1,0 +1,10 @@
+.nav-link:hover{
+    background-color:#BB2649 ;
+    color:#fff
+}
+
+.nav-link{transition: all .6s ease-in-out;}
+
+.active{
+    background-color: #BB2649 !important;
+}

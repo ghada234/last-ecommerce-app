@@ -1,0 +1,54 @@
+<div class="container" [formGroup]="checkoutForm">
+    <div class="d-flex justify-content-between align-items-center mt-3 mb-3" >
+
+        <h4>العنوان</h4>
+        <button class="btn btn-success" (click)="SaveUserAddressApi()" [disabled]="!checkoutForm.get('AddressForm').valid ||!checkoutForm.get('AddressForm').dirty">تعيين كعنوان أفتراضى</button>
+    </div>
+
+    <!--note use here formgroupname-->
+  <div class="row" formGroupName="AddressForm">
+      <div class="col-md-6 form-group">
+        <app-text-input formControlName="first_name" [label]="'الاسم الأول'"></app-text-input>
+      </div>
+
+      <div class="col-md-6 form-group">
+        <app-text-input formControlName="last_name" [label]="'الأسم الثانى'"></app-text-input>
+      </div>
+
+      <div class="col-md-6 form-group">
+        <app-text-input formControlName="street" [label]="'الشارع'"></app-text-input>
+      </div>
+
+      <div class="col-md-6 form-group">
+        <app-text-input formControlName="city" [label]="'المدينة'"></app-text-input>
+      </div>
+
+      <div class="col-md-6 form-group">
+        <app-text-input formControlName="country" [label]="'البلد'"></app-text-input>
+      </div>
+
+      <div class="col-md-6 form-group">
+        <app-text-input formControlName="postal_code" [label]="'الرقم البريدى'"></app-text-input>
+      </div>
+
+      <div class="col-md-6 form-group">
+        <app-text-input formControlName="phone_number" [label]="'رقم الجوال'"></app-text-input>
+      </div>
+    
+      <div class="col-md-6 form-group">
+        <app-text-input formControlName="email" [label]="'البريد الالكترونى'"></app-text-input>
+      </div>
+    
+
+
+  </div>
+
+  <!--buttttons-->
+  <div class="d-flex justify-content-between mt-4">
+    <button class="btn btn-outline-primary" [routerLink]="['/basket']"> <i class="fa fa-angle-right ml-2"></i>العودة الى السلة</button>
+    <button class="btn btn-outline-primary" cdkStepperNext [disabled]="checkoutForm.get('AddressForm').invalid"> الي طريقه التوصيل <i class="fa fa-angle-left mr-2"></i></button>
+   
+
+  </div>
+
+</div>

@@ -1,0 +1,394 @@
+<div class="container"  style="margin-top: 130px;">
+    <div class="row featurette mt-4">
+
+        <div class="col-md-5 mt-4" style="direction: ltr;">
+            <!-- <ngx-gallery [options]="galleryOptions" [images]="galleryImages"
+                style="display: inline-block; margin-bottom: 20px;"></ngx-gallery>  -->
+
+
+            <!-- <p-galleria [(value)]="images" [responsiveOptions]="responsiveOptions"
+                [containerStyle]="{'max-width': '640px'}" [numVisible]="3" [autoPlay]="true" circular="true"
+                visible="true">
+                <ng-template pTemplate="item" let-item>
+                 <img [src]="item.photoUrl" style="display: block;width: 100%; "  [redZoom]="item.photoUrl"
+                 redZoomClass="red-zoom--style--overlay">  -->
+
+            <!-- <lib-ngx-image-zoom  style="max-width: 100%; display: block;"
+    [thumbImage]="item.photoUrl"
+    [fullImage]="item.photoUrl"
+    [magnification]="2"
+    [enableScrollZoom]="true"
+    [enableLens]="true"
+    [lensWidth]="200"
+></lib-ngx-image-zoom>  -->
+
+
+
+
+
+            <!-- </ng-template>
+                <ng-template pTemplate="thumbnail" let-item>
+                    <div class="grid grid-nogutter justify-content-center">
+                        <img [src]="item.photoUrl" style="display: block; height:100%;width:100%" />
+                    </div>
+                </ng-template>
+            </p-galleria> -->
+
+
+            <!--swiperjs-->
+            <swiper
+      style="--swiper-navigation-color: #fff;--swiper-pagination-color: #fff"
+      [spaceBetween]="10"
+  
+ 
+      [thumbs]="{ swiper: thumbsSwiper }"
+      class="mySwiper2"
+      [autoplay]="{delay:3500,disableOnInteraction:false}"
+      [zoom]="true"
+    
+    >
+
+
+      <ng-template swiperSlide   *ngFor="let image of images">
+
+        <div class="swiper-slide"> 
+            <div class="swiper-zoom-container">
+                <img
+            src="{{image?.photoUrl}}" />
+            </div>
+            
+        
+        </div>
+        
+      </ng-template>  
+        
+  
+      
+    </swiper>
+
+
+
+    <swiper
+      (swiper)="thumbsSwiper = $event"
+      [spaceBetween]="10"
+      [slidesPerView]="3"
+      [freeMode]="true"
+      [watchSlidesProgress]="true"
+      class="mySwiper"
+    >
+    <ng-template swiperSlide   *ngFor="let image of images">
+
+        
+       <img style="display: block;object-fit: cover; width: 100%;height:100%;"
+            src="{{image?.photoUrl}}">
+        
+      
+      </ng-template>  
+        
+
+
+    </swiper>
+            <!--swiper js-->
+
+
+
+
+        </div>
+
+
+
+        <div class="col-md-7 content" style="direction: rtl; color: #5e5c5c;">
+
+            <div class="header">
+                <h2 class="feature-heading text-center" style="border-bottom:1px solid #ccc; padding-bottom: 10px;">
+                    {{product?.name}}</h2>
+
+                <p class="mt-2" style="font-size: 2rem; color: #BB2649" *ngIf="!product?.discountEnabled">
+                    {{product?.price}}EGP</p>
+                <div *ngIf="product?.discountEnabled">
+                    <p class="mt-1" style="font-size: 1.5rem; color: #bbb;  text-decoration: line-through;">
+                        {{product?.price}}EGP
+                    </p>
+                    <span
+                        style="font-size: 1.6rem; color:#BB2649; font-weight: bold; ">{{product?.priceAfterDiscount}}EGP</span>
+                </div>
+
+            </div>
+
+            <div class="d-flex-column mt-4 mb-4">
+                <div>
+                    <h5>الكمية</h5>
+                    <a (click)=" incrementQuantity()"> <i class="fas fa-plus-square fa-2x"
+                            style="color:#BB2649;cursor: pointer;"></i></a>
+                    <span
+                        style="font-weight: bold;font-size: 2rem; margin-left: 5px;margin-right: 5px;">{{quanity}}</span>
+                    <a (click)=" decrementQuantity()"> <i class="fas fa-minus-square fa-2x "
+                            style="color:#BB2649 ; cursor: pointer; "></i></a>
+                </div>
+
+            </div>
+            <h4>وصف المنتج</h4>
+            <p class="lead mt-3">{{product?.description}}</p>
+
+
+            <h4>الماركه</h4>
+            <p class="lead mt-3">{{product?.productBrand}}</p>
+
+            <!-- <ul class="color">
+            <li *ngFor="let color of colors"  style="display: inline-block;border: 1px solid #2964a7;margin-right: 10px;padding: 10px 20px;"
+            
+            (click)="selectColor(color.id,color.name)" [class.active]="this.selectedColorId===color.id"
+            
+            >
+                {{color.name}}
+            </li>
+        </ul> -->
+
+            <!-- <h4>اللون</h4> -->
+            <!-- <p>{{selectedColorName}}</p> -->
+            <!-- 
+        <button class="btn btn-primary btn-lg mt-3 mb-3" (click)="addItemToBasket()" [disabled]="selectedColorId==null">اضافة لعربة التسوق</button> -->
+
+
+            <div class="mt-3 mb-3">
+
+                <ul *ngFor="let attrbu of atttrbuites">
+
+                    <div *ngIf="attrbu.values.length!==1">
+
+
+                        <div *ngIf="!attrbu.isColor">
+
+                            <h4 class="mt-2 mb-2">{{attrbu?.attrbuiteType?.name}}</h4>
+
+                            <li *ngFor="let valuee of attrbu.values ;let i=index"
+                                style="display: inline-block;border: 3px solid #2964a7;margin-right: 10px;padding: 10px 20px;border-top-left-radius:15px; cursor: pointer;"
+                                (click)="selectvalues(attrbu?.attrbuiteType?.name,valuee.name,valuee.id,attrbu.id)"
+                                [class.active]="SelectedAttrObject[attrbu.attrbuiteType?.name]===valuee.name">
+                                {{valuee.name}}
+                            </li>
+
+
+                        </div>
+
+
+
+                        <div *ngIf="attrbu.isColor">
+                            <h4 class="mt-2 mb-2">{{attrbu?.attrbuiteType?.name}}</h4>
+                            <li *ngFor="let valuee of attrbu.values"
+                                style="display: inline-block;margin-right: 10px;width: 50px;height: 50px; border-radius: 50%;cursor: pointer;border: 3px solid #ccc; padding: 5px;"
+                                [style.background]="valuee.rgbColor"
+                                (click)="selectvalues(attrbu?.attrbuiteType?.name,valuee.name,valuee.id,attrbu.id)"
+                                [class.active]="SelectedAttrObject[attrbu.attrbuiteType?.name]===valuee.name">
+
+                            </li>
+                        </div>
+                    </div>
+
+                    <div *ngIf="attrbu.values.length===1" class="mt-4 mb-4">
+                        <div *ngFor="let val of attrbu.values">
+                            <h5 style="display: inline-block;"> {{attrbu?.attrbuiteType?.name}} :</h5>
+                            <span>{{val.name}}</span>
+                        </div>
+
+                    </div>
+
+
+
+
+
+                </ul>
+            </div>
+
+
+
+
+
+
+            <!-- <ul *ngFor="let selected of  SelectedValues">
+                <h5 style="display: inline-block;">{{selected.attrbuiteName}}: </h5>
+                <li style="display: inline-block;list-style: none;">{{selected.attrbuiteValue}}</li>
+            </ul> -->
+
+
+
+            <!--Specification attrbuire-->
+            <!---->
+
+            <div *ngIf="specattrbuites?.length!==0" class="mt-3 mb-3" style="border-top: 1px solid #ccc;">
+
+                <h4 class="mt-3 mb-3">التفاصيل</h4>
+                <!-- <ul *ngFor="let specattr of  specattrbuites" style="padding: 0px;" >
+                    <h5 style="display: inline-block;">{{specattr.specificationAttrbuiteTypeName}}: </h5>
+                    <li style="display: inline-block;list-style: none;"> {{specattr.specificationAttrbuiteTypeoptionName}}</li>
+                </ul> -->
+                <div class="mt-4 mb-3">
+
+
+                    <ul *ngFor="let keyi of arryKeys">
+
+
+
+                        <div *ngIf="groupSpecificationOptions">
+                            <div *ngIf="groupSpecificationOptions[keyi]?.length!==1">
+
+                                <h4 class="mt-3 mb-4">{{keyi}}</h4>
+                                <div>
+                                    <li class="spec-attr-list" *ngFor="let valuee of groupSpecificationOptions[keyi]"
+                                        (click)="selectvaluesSpecAttrbuite(keyi,valuee.specificationAttrbuiteTypeoptionName,valuee.attrbuiteSpecificationTypeOptionId
+                                        )"
+                                        [class.active]="this.SelectedSpecAttrObject[keyi]==valuee.specificationAttrbuiteTypeoptionName">
+
+
+                                        <div style="display: inline-block;">
+                                            {{valuee.specificationAttrbuiteTypeoptionName}}</div>
+                                        <!-- <div *ngIf="valuee.isColor"   [style.background]="valuee.rgbColor" style="width: 20px;height:20px ;border-radius: 50%;border:1px solid #ccc"></div> -->
+
+
+
+                                    </li>
+                                </div>
+
+                            </div>
+
+
+
+
+                            <div *ngIf="groupSpecificationOptions[keyi]?.length===1" class="mt-3 mb-3">
+
+                                <div *ngFor="let valuee of groupSpecificationOptions[keyi]" style="font-size: 1.2rem;">
+                                    <span style="font-weight: bold;">{{keyi}} : </span>
+                                    {{valuee.specificationAttrbuiteTypeoptionName}}
+                                </div>
+                                <!-- 
+                                <li *ngFor="let valuee of groupSpecificationOptions[keyi]"
+                                    style=" display: inline-block;">
+
+                                    {{valuee.specificationAttrbuiteTypeoptionName}}
+
+
+                                </li> -->
+                            </div>
+
+
+                        </div>
+
+
+
+                    </ul>
+
+                    <!-- <ul *ngFor="let selected of  SelectedSpecAttValues">
+                        <h5 style="display: inline-block;">{{selected.attrbuiteName}}: </h5>
+                        <li style="display: inline-block;list-style: none;">{{selected.attrbuiteValue}}</li>
+                    </ul> -->
+
+
+                </div>
+
+
+
+            </div>
+
+            <button class="btn  btn-lg mt-3 mb-3" (click)="addItemToBasket()"
+                [disabled]="SelectedSpecAttrObjectLength!==SpecAttrbuiteObjectLentgh">اضافة لعربة التسوق</button>
+
+        </div>
+
+    </div>
+    <div style="margin-top: 80px">
+      <h4 class="feature-heading">منتجات  ذات صله </h4>
+      <div class="row mt-5 mb-3" *ngIf="RelatedProducts?.length!==0">
+        <div class="col-md-3 mb-3 col-sm-6 col-6" *ngFor="let product of RelatedProducts">
+            <app-products-item [product]="product"></app-products-item>
+        </div>
+    </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<!-- <swiper
+      style="--swiper-navigation-color: #fff;--swiper-pagination-color: #fff"
+      [loop]="true"
+      [spaceBetween]="10"
+      [navigation]="true"
+      [thumbs]="{ swiper: thumbsSwiper }"
+      class="mySwiper2"
+    >
+      <ng-template swiperSlide
+        ><img
+          src="https://swiperjs.com/demos/images/nature-1.jpg" /></ng-template
+      ><ng-template swiperSlide
+        ><img
+          src="https://swiperjs.com/demos/images/nature-2.jpg" /></ng-template
+      ><ng-template swiperSlide
+        ><img
+          src="https://swiperjs.com/demos/images/nature-3.jpg" /></ng-template
+      ><ng-template swiperSlide
+        ><img
+          src="https://swiperjs.com/demos/images/nature-4.jpg" /></ng-template
+      ><ng-template swiperSlide
+        ><img
+          src="https://swiperjs.com/demos/images/nature-5.jpg" /></ng-template
+      ><ng-template swiperSlide
+        ><img
+          src="https://swiperjs.com/demos/images/nature-6.jpg" /></ng-template
+      ><ng-template swiperSlide
+        ><img
+          src="https://swiperjs.com/demos/images/nature-7.jpg" /></ng-template
+      ><ng-template swiperSlide
+        ><img
+          src="https://swiperjs.com/demos/images/nature-8.jpg" /></ng-template
+      ><ng-template swiperSlide
+        ><img
+          src="https://swiperjs.com/demos/images/nature-9.jpg" /></ng-template
+      ><ng-template swiperSlide
+        ><img src="https://swiperjs.com/demos/images/nature-10.jpg"
+      /></ng-template>
+    </swiper>
+    <swiper
+      (swiper)="thumbsSwiper = $event"
+      [loop]="true"
+      [spaceBetween]="10"
+      [slidesPerView]="4"
+      [freeMode]="true"
+      [watchSlidesProgress]="true"
+      class="mySwiper"
+    >
+      <ng-template swiperSlide
+        ><img
+          src="https://swiperjs.com/demos/images/nature-1.jpg" /></ng-template
+      ><ng-template swiperSlide
+        ><img
+          src="https://swiperjs.com/demos/images/nature-2.jpg" /></ng-template
+      ><ng-template swiperSlide
+        ><img
+          src="https://swiperjs.com/demos/images/nature-3.jpg" /></ng-template
+      ><ng-template swiperSlide
+        ><img
+          src="https://swiperjs.com/demos/images/nature-4.jpg" /></ng-template
+      ><ng-template swiperSlide
+        ><img
+          src="https://swiperjs.com/demos/images/nature-5.jpg" /></ng-template
+      ><ng-template swiperSlide
+        ><img
+          src="https://swiperjs.com/demos/images/nature-6.jpg" /></ng-template
+      ><ng-template swiperSlide
+        ><img
+          src="https://swiperjs.com/demos/images/nature-7.jpg" /></ng-template
+      ><ng-template swiperSlide
+        ><img
+          src="https://swiperjs.com/demos/images/nature-8.jpg" /></ng-template
+      ><ng-template swiperSlide
+        ><img
+          src="https://swiperjs.com/demos/images/nature-9.jpg" /></ng-template
+      ><ng-template swiperSlide
+        ><img src="https://swiperjs.com/demos/images/nature-10.jpg"
+      /></ng-template>
+    </swiper> -->
